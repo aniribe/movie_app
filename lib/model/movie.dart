@@ -5,6 +5,7 @@ class Movie {
   final String age;
   final String rating;
   final double watchedValue;
+  final int time;
 
   Movie({
     required this.image,
@@ -13,5 +14,6 @@ class Movie {
     required this.age,
     required this.rating,
     required this.watchedValue,
+    required this.time,
   });
 }

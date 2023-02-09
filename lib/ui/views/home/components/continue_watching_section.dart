@@ -4,8 +4,11 @@ import 'movies_grid.dart';
 import 'section_name_row.dart';
 
 class ContinueWatchingSection extends StatelessWidget {
+  final Function(int) onMoviePressed;
+
   const ContinueWatchingSection({
     super.key,
+    required this.onMoviePressed,
   });
 
   @override
@@ -14,7 +17,7 @@ class ContinueWatchingSection extends StatelessWidget {
       children: [
         const SectionNameRow(),
         verticalSpace(30),
-        const MoviesGrid(),
+        MoviesGrid(onMoviePressed: onMoviePressed),
       ],
     );
   }

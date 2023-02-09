@@ -4,4 +4,5 @@ class StringConsts {
   static String playNow = 'Play now';
   static String stillWatching = 'Still watching';
   static String continueWatching = 'Continue watching';
+  static int movieDetailsViewIndex = 4;
 }

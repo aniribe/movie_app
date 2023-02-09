@@ -2,6 +2,7 @@ import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/consts/app_colors.dart';
 import 'package:movie_app/ui/views/home/home_view.dart';
+import 'package:movie_app/ui/views/movie_details/movie_details_view.dart';
 import 'package:stacked/stacked.dart';
 
 import '../serach/search_view.dart';
@@ -17,6 +18,7 @@ class GeneralView extends StackedView<GeneralViewModel> {
         backgroundColor: AppColors.black,
         bottomNavigationBar: CustomNavigationBar(
           currentIndex: viewModel.currentIndex,
+          // currentIndex: viewModel.activeViewIndex,
           onTap: (index) => viewModel.onNavigationIconTaped(index),
           selectedColor: AppColors.red,
           unSelectedColor: AppColors.grey,
@@ -31,11 +33,14 @@ class GeneralView extends StackedView<GeneralViewModel> {
                 icon: const Icon(Icons.person_outline_outlined)),
           ],
         ),
-        body: getViewForIndex(viewModel.currentIndex),
+        body: getViewForIndex(viewModel.activeViewIndex),
       );
 
   @override
   GeneralViewModel viewModelBuilder(BuildContext context) => GeneralViewModel();
+
+  @override
+  void onViewModelReady(GeneralViewModel viewModel) => viewModel.onInit();
 }
 
 Widget getViewForIndex(int index) {
@@ -48,6 +53,8 @@ Widget getViewForIndex(int index) {
       return HomeView();
     case 3:
       return HomeView();
+    case 4:
+      return const MovieDetailsView();
 
     default:
       return HomeView();

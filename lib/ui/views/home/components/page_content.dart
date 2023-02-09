@@ -42,7 +42,7 @@ class PageContent extends StatelessWidget {
           ),
         ),
         verticalSpace(40),
-        const ContinueWatchingSection(),
+        ContinueWatchingSection(onMoviePressed: model.onMoviePressed),
       ],
     );
   }

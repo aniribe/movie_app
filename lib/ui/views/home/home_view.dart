@@ -16,9 +16,11 @@ class HomeView extends StackedView<HomeViewModel> {
       Scaffold(
         backgroundColor: AppColors.black,
         body: SafeArea(
-          child: PageContent(
-            controller: _controller,
-            model: viewModel,
+          child: SingleChildScrollView(
+            child: PageContent(
+              controller: _controller,
+              model: viewModel,
+            ),
           ),
         ),
       );

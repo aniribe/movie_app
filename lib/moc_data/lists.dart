@@ -14,6 +14,7 @@ class MocLists {
       age: "13+",
       rating: "10.0",
       watchedValue: 0.4,
+      time: 90,
     ),
     Movie(
       image:
@@ -23,6 +24,7 @@ class MocLists {
       age: "18+",
       rating: "8.2",
       watchedValue: 0.7,
+      time: 140,
     ),
     Movie(
       image:
@@ -32,6 +34,7 @@ class MocLists {
       age: "R",
       rating: "8.6",
       watchedValue: 0.2,
+      time: 120,
     ),
     Movie(
       image:
@@ -41,6 +44,7 @@ class MocLists {
       age: "13+",
       rating: "8.4",
       watchedValue: 0.8,
+      time: 70,
     ),
     Movie(
       image:
@@ -50,6 +54,7 @@ class MocLists {
       age: "18+",
       rating: "8.8",
       watchedValue: 0.3,
+      time: 90,
     ),
   ];
 

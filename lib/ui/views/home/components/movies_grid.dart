@@ -7,8 +7,11 @@ import 'movie_imae_container.dart';
 import 'movie_tite.dart';
 
 class MoviesGrid extends StatelessWidget {
+  final Function(int) onMoviePressed;
+
   const MoviesGrid({
     super.key,
+    required this.onMoviePressed,
   });
 
   @override
@@ -26,21 +29,25 @@ class MoviesGrid extends StatelessWidget {
           childAspectRatio: 1.5,
         ),
         itemCount: MocLists.movies.length,
-        itemBuilder: (context, index) => Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            MovieImageContainer(imagePath: MocLists.movies[index].image),
-            verticalSpace(15),
-            MovieTitle(movieTitle: MocLists.movies[index].title),
-            verticalSpace(15),
-            LinearProgressIndicator(
-              backgroundColor: AppColors.grey.withOpacity(0.5),
-              color: AppColors.red.withOpacity(0.6),
-              value: MocLists.movies[index].watchedValue,
-              minHeight: 3,
+        itemBuilder: (context, index) =>
+            GestureDetector(
+              onTap: () => onMoviePressed(index),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  MovieImageContainer(imagePath: MocLists.movies[index].image),
+                  verticalSpace(15),
+                  MovieTitle(movieTitle: MocLists.movies[index].title),
+                  verticalSpace(15),
+                  LinearProgressIndicator(
+                    backgroundColor: AppColors.grey.withOpacity(0.5),
+                    color: AppColors.red.withOpacity(0.6),
+                    value: MocLists.movies[index].watchedValue,
+                    minHeight: 3,
+                  ),
+                ],
+              ),
             ),
-          ],
-        ),
       ),
     );
   }
