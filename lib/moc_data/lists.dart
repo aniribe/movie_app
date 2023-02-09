@@ -1,4 +1,8 @@
+import 'package:movie_app/consts/string_consts.dart';
+
+import '../consts/app_images.dart';
 import '../model/movie.dart';
+import '../model/movies_carousel_item.dart';
 
 class MocLists {
   static List<Movie> movies = [
@@ -42,5 +46,39 @@ class MocLists {
       age: "18+",
       rating: "8.8",
     ),
+  ];
+
+  static List<MoviesCarouselItem> carouselMovies = [
+    MoviesCarouselItem(
+      image: AppImages.strangerThingsVol1,
+      title: StringConsts.strangerThings,
+      watcherAmount: 12,
+    ),
+    MoviesCarouselItem(
+      image: AppImages.strangerThingsVol2,
+      title: StringConsts.strangerThings,
+      watcherAmount: 15,
+    ),
+    MoviesCarouselItem(
+      image: AppImages.strangerThingsVol3,
+      title: StringConsts.strangerThings,
+      watcherAmount: 23,
+    ),
+    MoviesCarouselItem(
+      image: AppImages.strangerThingsVol4,
+      title: StringConsts.strangerThings,
+      watcherAmount: 0,
+    ),
+    MoviesCarouselItem(
+      image: AppImages.strangerThingsVol5,
+      title: StringConsts.strangerThings,
+      watcherAmount: 2,
+    ),
+  ];
+
+  static List<String> avatars = [
+    AppImages.avatar1,
+    AppImages.avatar2,
+    AppImages.avatar3,
   ];
 }

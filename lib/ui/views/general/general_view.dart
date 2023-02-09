@@ -16,7 +16,7 @@ class GeneralView extends StackedView<GeneralViewModel> {
       Scaffold(
         backgroundColor: AppColors.black,
         bottomNavigationBar: CustomNavigationBar(
-          currentIndex: viewModel.currentNavigationIndex,
+          currentIndex: viewModel.currentIndex,
           onTap: (index) => viewModel.onNavigationIconTaped(index),
           selectedColor: AppColors.red,
           unSelectedColor: AppColors.grey,
@@ -31,7 +31,7 @@ class GeneralView extends StackedView<GeneralViewModel> {
                 icon: const Icon(Icons.person_outline_outlined)),
           ],
         ),
-        body: getViewForIndex(viewModel.currentNavigationIndex),
+        body: getViewForIndex(viewModel.currentIndex),
       );
 
   @override
