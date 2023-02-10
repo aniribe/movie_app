@@ -6,6 +6,7 @@ import '../../../../consts/app_colors.dart';
 import '../../../ui_utils/ui_helper.dart';
 import '../../../widgets/app_bars/app_bar_for_home_view.dart';
 import '../home_viewmodel.dart';
+import 'continue_watching_section.dart';
 
 class PageContent extends StatelessWidget {
   final HomeViewModel model;
@@ -40,6 +41,8 @@ class PageContent extends StatelessWidget {
             spacing: 8,
           ),
         ),
+        verticalSpace(40),
+        const ContinueWatchingSection(),
       ],
     );
   }

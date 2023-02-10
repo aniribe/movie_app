@@ -13,6 +13,7 @@ class MocLists {
       genre: "Action",
       age: "13+",
       rating: "10.0",
+      watchedValue: 0.4,
     ),
     Movie(
       image:
@@ -21,6 +22,7 @@ class MocLists {
       genre: "Crime",
       age: "18+",
       rating: "8.2",
+      watchedValue: 0.7,
     ),
     Movie(
       image:
@@ -29,14 +31,16 @@ class MocLists {
       genre: "Adventure",
       age: "R",
       rating: "8.6",
+      watchedValue: 0.2,
     ),
     Movie(
       image:
           "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/2629bad87568290e63a1f62e81fd2d9bf3703268cdbc6ff38a02a6c5de0f0e29._RI_V_TTW_.jpg",
-      title: "Avengers: Infinity Wa",
+      title: "Avengers: Infinity War",
       genre: "Sci:Fi",
       age: "13+",
       rating: "8.4",
+      watchedValue: 0.8,
     ),
     Movie(
       image:
@@ -45,6 +49,7 @@ class MocLists {
       genre: "Crime",
       age: "18+",
       rating: "8.8",
+      watchedValue: 0.3,
     ),
   ];
 
