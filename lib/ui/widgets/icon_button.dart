@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:movie_app/ui/widgets/clasmorphism_container.dart';
+import 'package:movie_app/ui/widgets/glassmorphism_container.dart';
 
 import '../../consts/app_colors.dart';
 

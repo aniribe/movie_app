@@ -6,13 +6,11 @@ import '../../../services/movie_details_service.dart';
 
 class MovieDetailsViewModel extends BaseViewModel {
   final _movieDetailsService = locator<MovieDetailsService>();
-  final _navigationService = locator<NavigationService>();
 
   int? get movieIndex => _movieDetailsService.movieIndex;
 
   @override
   void dispose() {
-    print('HERE');
     setMovieDetailsChose(null);
     super.dispose();
   }
