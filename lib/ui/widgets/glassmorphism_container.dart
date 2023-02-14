@@ -6,10 +6,12 @@ import '../../consts/app_colors.dart';
 
 class GlassmorphismContainer extends StatelessWidget {
   final Widget child;
+  final EdgeInsets padding;
 
   const GlassmorphismContainer({
     Key? key,
     required this.child,
+    this.padding = const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
   }) : super(key: key);
 
   @override
@@ -18,6 +20,7 @@ class GlassmorphismContainer extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
         child: Container(
+          padding: padding,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             gradient: LinearGradient(
