@@ -4,19 +4,17 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../consts/app_colors.dart';
 
 class MovieTitle extends StatelessWidget {
-  final String title;
-
+  final String name;
 
   const MovieTitle({
     super.key,
-    required this.title,
+    required this.name,
   });
-
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      title,
+      name,
       style: GoogleFonts.manrope(
         color: AppColors.white,
         fontSize: 50,

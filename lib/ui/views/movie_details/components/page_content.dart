@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_app/ui/views/movie_details/components/poster_container.dart';
 
 import '../../../../consts/app_colors.dart';
 import '../../../../consts/string_consts.dart';
 import '../../../../moc_data/lists.dart';
 import '../../../ui_utils/ui_helper.dart';
-import '../../../widgets/glassmorphism_container.dart';
-import '../../../widgets/icon_button.dart';
 import '../movie_details_viewmodel.dart';
-import 'movie_data_container.dart';
+import 'movie_main_details.dart';
 
 class PageContent extends StatelessWidget {
   final MovieDetailsViewModel viewModel;
@@ -24,13 +21,7 @@ class PageContent extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Stack(
-            children: [
-              PosterContainer(
-                  image: MocLists.movies[viewModel.movieIndex as int].image),
-              MovieDataContainer(viewModel: viewModel),
-            ],
-          ),
+          MovieMainDetails(viewModel: viewModel),
           verticalSpace(25),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),

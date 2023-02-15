@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../consts/app_colors.dart';
 import '../../../../moc_data/lists.dart';
-import '../../../ui_utils/ui_helper.dart';
-import '../../../widgets/glassmorphism_container.dart';
-import '../movie_details_viewmodel.dart';
 import 'back_button_row.dart';
-import 'movie_title.dart';
-import 'rating_row.dart';
+import 'title_section.dart';
 
 class MovieData extends StatelessWidget {
-  final MovieDetailsViewModel viewModel;
+  final int movieIndex;
+  final VoidCallback onBackButtonPressed;
 
   const MovieData({
     super.key,
-    required this.viewModel,
+    required this.movieIndex,
+    required this.onBackButtonPressed,
   });
 
   @override
@@ -26,18 +22,12 @@ class MovieData extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            BackButtonRow(onPressed: viewModel.onBackButtonPressed),
-            Column(
-              children: [
-                MovieTitle(
-                    title: MocLists.movies[viewModel.movieIndex as int].title),
-                verticalSpace(10),
-                RatingRow(
-                  age: MocLists.movies[viewModel.movieIndex as int].age,
-                  genre: MocLists.movies[viewModel.movieIndex as int].genre,
-                  rating: MocLists.movies[viewModel.movieIndex as int].rating,
-                ),
-              ],
+            BackButtonRow(onPressed: onBackButtonPressed),
+            TitleSection(
+              movieName: MocLists.movies[movieIndex].title,
+              age: MocLists.movies[movieIndex].age,
+              genre: MocLists.movies[movieIndex].genre,
+              rating: MocLists.movies[movieIndex].rating,
             ),
           ],
         ),
