@@ -6,6 +6,7 @@ import '../../../../consts/string_consts.dart';
 import '../../../../moc_data/lists.dart';
 import '../../../ui_utils/ui_helper.dart';
 import '../movie_details_viewmodel.dart';
+import 'movie_duration_section.dart';
 import 'movie_main_details.dart';
 
 class PageContent extends StatelessWidget {
@@ -23,35 +24,12 @@ class PageContent extends StatelessWidget {
         children: [
           MovieMainDetails(viewModel: viewModel),
           verticalSpace(25),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      MocLists.movies[viewModel.movieIndex as int].title,
-                      style: GoogleFonts.manrope(
-                          color: AppColors.white, fontSize: 17),
-                    ),
-                    Text(
-                      '${MocLists.movies[viewModel.movieIndex as int].time} min',
-                      style: GoogleFonts.manrope(
-                          color: AppColors.white.withOpacity(0.7),
-                          fontSize: 14),
-                    )
-                  ],
-                ),
-                verticalSpace(20),
-                LinearProgressIndicator(
-                  backgroundColor: AppColors.darkGrey.withOpacity(0.5),
-                  color: AppColors.red,
-                  value:
-                      MocLists.movies[viewModel.movieIndex as int].watchedValue,
-                ),
-              ],
-            ),
+          MovieDurationSection(
+            watchedValue:
+                MocLists.movies[viewModel.movieIndex as int].watchedValue,
+            movieName: MocLists.movies[viewModel.movieIndex as int].title,
+            duration:
+                '${MocLists.movies[viewModel.movieIndex as int].time} min',
           ),
           verticalSpace(30),
           Padding(
